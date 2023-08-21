@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ChallengeView: View {
-    @State var is 
+    @State var show = false
     
     var body: some View {
         ZStack {
@@ -16,7 +16,15 @@ struct ChallengeView: View {
             Text("LET'S CREATE MEMORIES \nWITH YOUR LOVED ONES \nBEFORE THEY'RE GONE! \n🙏❤️")
                 .buttonText()
                 .multilineTextAlignment(.center)
+                .opacity(show ? 1 : 0)
                 .animation(.easeInOut(duration: 0.5))
+        }
+        .onAppear {
+            withAnimation() {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    show.toggle()
+                }
+            }
         }
     }
 }
