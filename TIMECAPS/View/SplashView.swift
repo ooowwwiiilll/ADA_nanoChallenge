@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct Splash: View {
+    @State private var path: NavigationPath = .init()
     @State private var rotationAngle: Angle = .degrees(0)
     
     var body: some View {
         NavigationStack {
             ZStack {
                 Color.blue.edgesIgnoringSafeArea(.all)
-                Color.black.opacity(0.2).edgesIgnoringSafeArea(.all)
+                Color.white.opacity(0.2).edgesIgnoringSafeArea(.all)
                 VStack(spacing: 32) {
                     ZStack(alignment: .topTrailing) {
                         Image("title1")
@@ -30,7 +31,7 @@ struct Splash: View {
                                 .aspectRatio(contentMode: .fit)
                                 .blur(radius: 12)
                         }
-                        .frame(width: 60)
+                        .frame(width: 48)
                         .opacity(0.4)
                         .rotationEffect(rotationAngle)
                         .accessibilityIdentifier("star")
@@ -39,11 +40,11 @@ struct Splash: View {
                                 rotationAngle = .degrees(360)
                             }
                         }
-                        .offset(x: -58 , y: 16)
+                        .offset(x: -54 , y: 16)
                     }
-                    NavigationLink(destination: ContentView()) {
-                        ButtonNext(title: "START")
-                    }
+                    NavigationLink(destination: StoryView()) {
+                       Text("START")
+                    }.buttonStyle(.myButtonStyle)
                 }
                 .padding(16)
             }

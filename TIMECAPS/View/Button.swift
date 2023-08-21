@@ -14,10 +14,8 @@ struct ButtonNext: View {
     var body: some View {
         ZStack {
             Text(title)
+                .buttonText()
                 .foregroundColor(.white)
-                .font(.system(size: 24))
-                .fontWeight(.bold)
-                .fontDesign(.rounded)
                 .padding(.vertical, 16)
                 .padding(.horizontal)
                 .frame(maxWidth: .infinity)
@@ -27,18 +25,25 @@ struct ButtonNext: View {
                 .shadow(color: Color.orange.opacity(0.8),
                     radius: 0, y: isAnimating ? 0 : 8)
                 .shadow(radius: 0, y: isAnimating ? 0 : 0)
-                .onTapGesture {
-                    isAnimating.toggle()
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                        isAnimating.toggle()
-                    }
-                }
+            
+            // TODO: Animation when clicked 👇
+//                .onTapGesture {
+//                    isAnimating.toggle()
+//                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+//                        isAnimating.toggle()
+//                    }
+//                }
         }
     }
 }
 
 struct ContentView2_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        VStack {
+            Button("Test") {
+                
+            }
+            .buttonStyle(.myButtonStyle)
+        }
     }
 }

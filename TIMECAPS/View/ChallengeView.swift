@@ -8,12 +8,16 @@
 import SwiftUI
 
 struct ChallengeView: View {
+    @State var is 
+    
     var body: some View {
-        Text("PARDON BELUM KELAR 🙏\nWILL UPDATE ASAP")
-            .multilineTextAlignment(.center)
-            .font(.system(size: 24))
-            .fontWeight(.bold)
-            .fontDesign(.rounded)
+        ZStack {
+            Color.orange.edgesIgnoringSafeArea(.all)
+            Text("LET'S CREATE MEMORIES \nWITH YOUR LOVED ONES \nBEFORE THEY'RE GONE! \n🙏❤️")
+                .buttonText()
+                .multilineTextAlignment(.center)
+                .animation(.easeInOut(duration: 0.5))
+        }
     }
 }
 

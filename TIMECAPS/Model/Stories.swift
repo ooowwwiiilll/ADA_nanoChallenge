@@ -7,18 +7,6 @@
 
 import SwiftUI
 
-//struct Story: Identifiable {
-//    let id: UUID = .init()
-//
-//    var list: [Card] = .init()
-//    init() {
-//        for idx in 1...10 {
-//            let card: Card = .init(title: "Scene\(idx)", image: Image("s\(idx)"))
-//            list.append(card)
-//        }
-//    }
-//}
-
 let Stories = [
     Card(title: "Scene1", image: Image("s1")),
     Card(title: "Scene1", image: Image("s2")),
