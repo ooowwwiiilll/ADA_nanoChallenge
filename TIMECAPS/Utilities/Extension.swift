@@ -13,6 +13,11 @@ extension Text {
             .fontWeight(.bold)
             .fontDesign(.rounded)
     }
+    func bodyText() -> some View {
+        self.font(.system(size: 14))
+            .fontWeight(.semibold)
+            .fontDesign(.rounded)
+    }
 }
 
 struct MyButtonStyle: ButtonStyle {

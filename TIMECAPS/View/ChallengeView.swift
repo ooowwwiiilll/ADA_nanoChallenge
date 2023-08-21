@@ -13,7 +13,7 @@ struct ChallengeView: View {
     var body: some View {
         ZStack {
             Color.orange.edgesIgnoringSafeArea(.all)
-            Text("LET'S CREATE MEMORIES \nWITH YOUR LOVED ONES \nBEFORE THEY'RE GONE! \n🙏❤️")
+            Text("LET'S CREATE MEMORIES \nWITH YOUR LOVED ONES \nBEFORE THEY'RE GONE! \n \n🙏❤️ \n \nONE OF THE WAY IS BY \nCOLLECTING MEMORIES!")
                 .buttonText()
                 .multilineTextAlignment(.center)
                 .opacity(show ? 1 : 0)
@@ -21,7 +21,7 @@ struct ChallengeView: View {
         }
         .onAppear {
             withAnimation() {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                     show.toggle()
                 }
             }

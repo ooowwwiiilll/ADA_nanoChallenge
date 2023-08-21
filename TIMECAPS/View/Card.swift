@@ -13,7 +13,7 @@ struct CardView: View {
     let story: Card
     
     var body: some View {
-        ZStack {
+        ZStack(alignment: .bottomLeading) {
             story.image
                 .resizable()
                 .aspectRatio(contentMode: .fit)
@@ -21,6 +21,10 @@ struct CardView: View {
                 .padding(.bottom, 80)
                 .background(Color.white)
                 .cornerRadius(16)
+            Text(story.title)
+                .bodyText()
+                .foregroundColor(.black.opacity(0.8))
+                .padding(16)
         }
         .padding(4)
         .background(Color.white.opacity(0.2))
@@ -30,6 +34,7 @@ struct CardView: View {
 
 struct ContentView3_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+//        ContentView()
+        StoryView()
     }
 }
