@@ -14,6 +14,7 @@ struct StoryView: View {
     @State var isLastStep = false
     
     var body: some View {
+        
         NavigationStack {
             ZStack {
                 Color.blue.edgesIgnoringSafeArea(.all)
@@ -21,24 +22,11 @@ struct StoryView: View {
                 
                 if isLastStep {
                     ChallengeView()
-                        .opacity(lastShow ? 1 : 0)
-                        .animation(.easeInOut(duration: 0.5))
-                        .onAppear {
-                            withAnimation() {
-                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                                    lastShow.toggle()
-                                }
-                            }
-                        }
                 } else {
                     VStack (spacing: 32) {
-                        ZStack {
-    //                        ForEach(Stories) { story in
-    //                            CardView(story: story)
-    //                        }
-                            CardView(story: Stories[steps])
-                            
-                        }
+                        
+                        CardView(story: Stories[steps])
+                        
                         Button("NEXT") {
                             if steps != 10 {
                                 steps = steps + 1
@@ -50,7 +38,7 @@ struct StoryView: View {
                     }
                     .padding(16)
                     .opacity(show ? 1 : 0)
-                    .animation(.easeInOut(duration: 0.5))
+                    .animation(Animation.easeInOut(duration: 0.5), value: show)
                 }
             }
             .onAppear {

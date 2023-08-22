@@ -36,7 +36,6 @@ struct MyButtonStyle: ButtonStyle {
             .offset(y: configuration.isPressed ? 8 : 0)
             .shadow(color: Color.orange.opacity(0.8), radius: 0, y: configuration.isPressed ? 0 : 8)
             .shadow(radius: 0, y: configuration.isPressed ? 0 : 0)
-//            .animation(.none, value: configuration.isPressed)
     }
 }
 

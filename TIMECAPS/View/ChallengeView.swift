@@ -11,13 +11,21 @@ struct ChallengeView: View {
     @State var show = false
     
     var body: some View {
+        
         ZStack {
             Color.orange.edgesIgnoringSafeArea(.all)
-            Text("LET'S CREATE MEMORIES \nWITH YOUR LOVED ONES \nBEFORE THEY'RE GONE! \n \n🙏❤️ \n \nONE OF THE WAY IS BY \nCOLLECTING MEMORIES!")
-                .buttonText()
-                .multilineTextAlignment(.center)
-                .opacity(show ? 1 : 0)
-                .animation(.easeInOut(duration: 0.5))
+            VStack(spacing: 0) {
+                Text("LET'S CREATE MEMORIES \nWITH YOUR LOVED ONES! \n")
+                    .buttonText()
+                    .multilineTextAlignment(.center)
+                    .opacity(show ? 1 : 0)
+                Text("BEFORE IT'S TOO LATE")
+                    .bodyText()
+                    .multilineTextAlignment(.center)
+                    .opacity(show ? 0.3 : 0)
+            }
+//            .animation(.easeInOut(duration: 0.5))
+            .animation(Animation.easeInOut(duration: 0.5), value: show)
         }
         .onAppear {
             withAnimation() {

@@ -34,7 +34,6 @@ struct CardView: View {
 
 struct ContentView3_Previews: PreviewProvider {
     static var previews: some View {
-//        ContentView()
         StoryView()
     }
 }

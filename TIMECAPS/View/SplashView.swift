@@ -15,7 +15,7 @@ struct Splash: View {
         NavigationStack {
             ZStack {
                 Color.blue.edgesIgnoringSafeArea(.all)
-                Color.white.opacity(0.2).edgesIgnoringSafeArea(.all)
+                Color.purple.opacity(0.4).edgesIgnoringSafeArea(.all)
                 VStack(spacing: 32) {
                     ZStack(alignment: .topTrailing) {
                         Image("title1")
